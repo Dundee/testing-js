@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/EmailAddress.js"></script>
+		<style type="text/css">
+			body {
+				width: 500px;
+				margin: 200px auto;
+			}
+			.error {
+				background: #ffb1a8;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery('#email').blur(function(){
+					var elem = jQuery(this);
+					var id = elem.attr('id');
+					try {
+						var email = new EmailAddress(elem.val());
+					} catch (err) {
+						elem.addClass('error');
+						jQuery('#' + id + '-error').html(err.toString());
+						return;
+					}
+					elem.removeClass('error');
+					jQuery('#' + id + '-error').html('');
+				});
+			});
+		</script>
+		<form action="#">
+			<fieldset>
+				<legend>Login</legend>
+				<div>
+					<label for="email">Email: </label>
+					<input id="email" name="email" type="text" />
+					<span id="email-error"></span>
+				</div>
+				<div>
+					<label for="password">Password: </label>
+					<input id="password" name="password" type="password" />
+					<span id="password-error"></span>
+				</div>
+				<div>
+					<input type="submit" />
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>
