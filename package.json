@@ -2,5 +2,8 @@
     "name": "testing-js"
   , "version": "0.0.1"
   , "dependencies": {
+        "mocha": "*"
+      , "mocha-phantomjs": "*"
+      , "expect.js": "*"
     }
 }
