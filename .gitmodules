@@ -1,0 +1,6 @@
+[submodule "lib/jasmine"]
+	path = lib/jasmine
+	url = git://github.com/pivotal/jasmine.git
+[submodule "lib/jasmine-jstd-adapter"]
+	path = lib/jasmine-jstd-adapter
+	url = git://github.com/ibolmo/jasmine-jstd-adapter.git
